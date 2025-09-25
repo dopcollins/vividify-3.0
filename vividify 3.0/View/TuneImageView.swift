@@ -1,18 +1,10 @@
-//
-//  TuneImageView.swift
-//  vividify 3.0
-//
-//  Created by Collins Roy on 20/08/25.
-//
-
-
 import SwiftUI
 
 struct TuneImageView: View {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var controller: TuneImageController
-
+    
     init(image: Binding<UIImage?>) {
         _image = image
         if let img = image.wrappedValue {
@@ -21,7 +13,7 @@ struct TuneImageView: View {
             _controller = StateObject(wrappedValue: TuneImageController(image: UIImage()))
         }
     }
-
+    
     var body: some View {
         VStack {
             if let adjustedImage = controller.model.adjustedImage {
@@ -32,32 +24,38 @@ struct TuneImageView: View {
                     .padding()
             } else {
                 Text("Loading image...")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                     .font(.headline)
             }
-
+            
             Spacer()
-
+            
             VStack(spacing: 12) {
-                Text("Smoothness").foregroundColor(.black)
+                Text("Smoothness")
+                    .foregroundColor(.primary)
                 Slider(value: $controller.model.smoothness, in: 0...2, onEditingChanged: { _ in
                     controller.applyFilters()
                 })
-
-                Text("Sharpness").foregroundColor(.black)
+                
+                Text("Sharpness")
+                    .foregroundColor(.primary)
                 Slider(value: $controller.model.sharpness, in: 0...2, onEditingChanged: { _ in
                     controller.applyFilters()
                 })
             }
             .padding()
-
-            Button("Apply") {
-                image = controller.model.adjustedImage
-                presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
-            .buttonStyle(.borderedProminent)
         }
-        .padding(.horizontal) 
+        .padding(.horizontal)
+        .background(Color(UIColor.systemBackground))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Apply") {
+                    image = controller.model.adjustedImage
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
     }
 }

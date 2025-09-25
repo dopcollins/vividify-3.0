@@ -6,15 +6,13 @@
 //
 
 
-
-// Enhanced TuneImageModel.swift
 import UIKit
 
 struct TuneImageModel {
     var originalImage: UIImage
     var adjustedImage: UIImage?
     
-    // Fine-tuning parameters
+
     var smoothness: Double = 0.0
     var sharpness: Double = 0.0
     var clarity: Double = 0.0

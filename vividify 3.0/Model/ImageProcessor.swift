@@ -5,8 +5,6 @@
 //  Created by Collins Roy on 20/08/25.
 //
 
-
-// ImageProcessor.swift
 import UIKit
 import CoreImage
 import CoreImage.CIFilterBuiltins

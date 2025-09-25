@@ -5,8 +5,6 @@
 //  Created by Collins Roy on 20/08/25.
 //
 
-
-// TuneImageController.swift
 import Foundation
 import SwiftUI
 import CoreImage

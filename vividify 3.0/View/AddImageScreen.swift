@@ -10,7 +10,6 @@ struct AddImageScreen: View {
             Spacer()
             
             VStack(spacing: 20) {
-                // Plus button
                 Button(action: {
                     isPickerOptionSheetPresented.toggle()
                 }) {
