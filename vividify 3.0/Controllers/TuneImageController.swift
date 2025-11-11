@@ -33,7 +33,6 @@ class TuneImageController: ObservableObject {
     }
     
     private func setupBindings() {
-        // Monitor changes to model parameters
         $model
             .debounce(for: .milliseconds(100), scheduler: RunLoop.main)
             .sink { [weak self] _ in
@@ -59,7 +58,6 @@ class TuneImageController: ObservableObject {
         
         var outputImage = ciImage
         
-        // Apply smoothness (blur)
         if model.smoothness > 0 {
             let smoothnessFilter = CIFilter.gaussianBlur()
             smoothnessFilter.inputImage = outputImage
@@ -67,7 +65,6 @@ class TuneImageController: ObservableObject {
             outputImage = smoothnessFilter.outputImage ?? outputImage
         }
         
-        // Apply sharpness
         if model.sharpness > 0 {
             let sharpnessFilter = CIFilter.unsharpMask()
             sharpnessFilter.inputImage = outputImage
@@ -76,7 +73,6 @@ class TuneImageController: ObservableObject {
             outputImage = sharpnessFilter.outputImage ?? outputImage
         }
         
-        // Apply clarity (local contrast)
         if model.clarity != 0 {
             let clarityFilter = CIFilter.unsharpMask()
             clarityFilter.inputImage = outputImage
@@ -85,7 +81,6 @@ class TuneImageController: ObservableObject {
             outputImage = clarityFilter.outputImage ?? outputImage
         }
         
-        // Apply vignette
         if model.vignette != 0 {
             let vignetteFilter = CIFilter.vignette()
             vignetteFilter.inputImage = outputImage

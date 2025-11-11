@@ -48,7 +48,7 @@ class ImageEditModel: ObservableObject {
         editHistory.append(image)
         currentHistoryIndex = editHistory.count - 1
         
-        // Limit history to prevent memory issues
+      
         if editHistory.count > 15 {
             editHistory.removeFirst()
             currentHistoryIndex -= 1

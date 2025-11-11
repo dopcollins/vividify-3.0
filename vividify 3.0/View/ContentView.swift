@@ -1,6 +1,6 @@
 //import SwiftUI
 
-import SwiftUICore
+import SwiftUI
 import SwiftUI
 
 struct ContentView: View {

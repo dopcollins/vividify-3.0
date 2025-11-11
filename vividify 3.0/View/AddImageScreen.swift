@@ -1,4 +1,4 @@
-import SwiftUICore
+import SwiftUI
 import SwiftUI
 
 struct AddImageScreen: View {
@@ -29,7 +29,6 @@ struct AddImageScreen: View {
             Spacer()
         }
         .sheet(isPresented: $isPickerOptionSheetPresented) {
-            // two options
             VStack(spacing: 20) {
                 Text("Select Image Source")
                     .font(.headline)

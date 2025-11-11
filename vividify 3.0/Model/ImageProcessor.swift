@@ -49,7 +49,6 @@ class ImageProcessor {
         }
     }
     
-    // Synchronous version for immediate processing
     func applyFilters(to image: UIImage, 
                      brightness: Double = 0.0,
                      contrast: Double = 1.0,
@@ -71,7 +70,6 @@ class ImageProcessor {
         guard let ciImage = CIImage(image: image) else { return image }
         var outputImage = ciImage
         
-        // Apply basic color controls
         if brightness != 0.0 || contrast != 1.0 || saturation != 1.0 {
             let colorFilter = CIFilter.colorControls()
             colorFilter.inputImage = outputImage
@@ -81,7 +79,6 @@ class ImageProcessor {
             outputImage = colorFilter.outputImage ?? outputImage
         }
         
-        // Apply temperature adjustment
         if warmth != 0.0 {
             let temperatureFilter = CIFilter.temperatureAndTint()
             temperatureFilter.inputImage = outputImage
@@ -89,7 +86,6 @@ class ImageProcessor {
             outputImage = temperatureFilter.outputImage ?? outputImage
         }
         
-        // Apply shadow adjustment
         if shadows != 0.0 {
             let shadowFilter = CIFilter.highlightShadowAdjust()
             shadowFilter.inputImage = outputImage
