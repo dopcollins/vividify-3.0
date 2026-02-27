@@ -41,7 +41,8 @@ struct ToolsView: View {
 
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 18) {
+                HStack(spacing: 25
+                ) {
                     NavigationLink(destination: CropView(image: $selectedImage)) {
                         toolButton(title: "Crop", systemImage: "crop")
                     }
@@ -55,7 +56,7 @@ struct ToolsView: View {
                         toolButton(title: "Draw", systemImage: "pencil.tip.crop.circle")
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 25)
                 .padding(.vertical, 15)
                 .background(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
@@ -153,3 +154,4 @@ struct ToolsView: View {
         .accessibilityLabel(title)
     }
 }
+

@@ -25,21 +25,9 @@ struct DetailsView: View {
             
             VStack {
                 Spacer()
-                Button("Adjust Details") {
-                    showingSliders.toggle()
-                }
-                .padding()
-            }
-        }
-        .navigationBarItems(trailing: Button("Apply") {
-            self.image = controller.applyFilters(to: image)
-            presentationMode.wrappedValue.dismiss()
-        })
-        .sheet(isPresented: $showingSliders) {
-            VStack {
                 
                 ScrollView {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 16) {
                         Text("Brightness").foregroundColor(.black)
                         Slider(value: $controller.brightness, in: -1...1)
                         
@@ -55,20 +43,17 @@ struct DetailsView: View {
                         Text("Shadows").foregroundColor(.black)
                         Slider(value: $controller.shadows, in: -1...1)
                     }
-                }
-                
-                HStack {
-                    Button("Close") {
-                        showingSliders = false
-                    }
                     .padding()
                 }
+                .frame(height: UIScreen.main.bounds.height / 4)
+                .background(.ultraThinMaterial)
+                .cornerRadius(20)
+                .padding()
             }
-            .padding()
-            .background(.ultraThinMaterial)
-            .cornerRadius(20)
-            .frame(height: UIScreen.main.bounds.height / 3)
-            .presentationDetents([.fraction(0.4)])
+            .navigationBarItems(trailing: Button("Apply") {
+                self.image = controller.applyFilters(to: image)
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }

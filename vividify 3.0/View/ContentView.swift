@@ -1,4 +1,3 @@
-//import SwiftUI
 
 import SwiftUI
 import SwiftUI
@@ -59,5 +58,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

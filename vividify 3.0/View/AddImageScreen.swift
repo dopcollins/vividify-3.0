@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUI
 
 struct AddImageScreen: View {
     @EnvironmentObject var model: ImageEditModel
