@@ -25,10 +25,6 @@ struct ToolsView: View {
                             .scaledToFit()
                             .frame(maxHeight: geometry.size.height * 0.7)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .stroke(Color.white.opacity(0.25), lineWidth: 1)
-                            )
                             .shadow(color: .black.opacity(0.12), radius: 8, x: 0, y: 4)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

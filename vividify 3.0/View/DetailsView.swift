@@ -28,19 +28,19 @@ struct DetailsView: View {
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Brightness").foregroundColor(.black)
+                        Text("Brightness")
                         Slider(value: $controller.brightness, in: -1...1)
                         
-                        Text("Contrast").foregroundColor(.black)
-                        Slider(value: $controller.contrast, in: 0.5...2)
+                        Text("Contrast")
+                        Slider(value: $controller.contrast, in: 0...2)
                         
-                        Text("Saturation").foregroundColor(.black)
+                        Text("Saturation")
                         Slider(value: $controller.saturation, in: 0...2)
                         
-                        Text("Warmth").foregroundColor(.black)
+                        Text("Warmth")
                         Slider(value: $controller.warmth, in: -1...1)
                         
-                        Text("Shadows").foregroundColor(.black)
+                        Text("Shadows")
                         Slider(value: $controller.shadows, in: -1...1)
                     }
                     .padding()
