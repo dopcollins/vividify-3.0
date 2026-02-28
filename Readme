@@ -1,7 +1,24 @@
-//
-//  Readme.swift
-//  vividify 3.0
-//
-//  Created by Collins Roy on 27/02/26.
-//
+# Vividify 3.0
+
+Vividify 3.0 is a Swift-based iOS photo editing application that enables powerful, real-time image adjustments with a focus on user-friendly tools and live previews.
+
+Built with UIKit and modern image processing techniques, Vividify offers a suite of editing features that let users tune photos, draw and annotate.
+
+## 🚀 Features
+
+### 📸 Core Editing Tools
+- **Tune Image** — Adjust brightness, contrast, saturation, smoothness, sharpness and more with live updates.
+- **CropRectangleRamp** — Adjust the cropping rectangle interactively.
+- **Rotate Image** — Rotate images by 90°, 180°, or 270° with a smooth animation.
+- **Live Preview** — All adjustments instantly update the image display.
+
+### ✏️ Creative Enhancements
+- **Draw on Image** — Freehand drawing with support for multiple pens, brush sizes and colors.
+- **Eraser Tool** — Remove drawn elements or undo parts of drawing.
+
+## 🎯 Design Principles
+- **Live Interaction** — All adjustments reflect immediately on the image.
+- **MVC Architecture** — Clean separation of Model-View-Controller for maintainability.
+- **Native iOS** — Built natively with Swift for seamless performance and integration with iOS features.
+
 
